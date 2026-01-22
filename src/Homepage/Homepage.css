@@ -1,0 +1,55 @@
+.hero {
+  height: calc(100vh - 100px); /* header height */
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Image fills container */
+.hero video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* 🔑 makes it cover the screen */
+  object-position: center;
+  display: block;
+}
+
+.home {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* forces video above map */
+}
+
+.mapSection {
+  padding: 32px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mapTitle {
+  margin: 0 0 16px;
+  font-family: "Libre Baskerville", serif;
+  color: #f5e6c8; /* if your background is dark */
+}
+
+.mapWrap {
+  width: min(900px, 100%);
+  height: 380px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+}
+
+.mapWrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 600px) {
+  .mapWrap {
+    height: 280px;
+  }
+}
+
