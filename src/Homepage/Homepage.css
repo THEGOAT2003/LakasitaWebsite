@@ -1,17 +1,40 @@
 .hero {
-  height: calc(100vh - 100px); /* header height */
+  height: calc(100vh - 100px);
   width: 100%;
   overflow: hidden;
   position: relative;
 }
 
 /* Image fills container */
-.hero video {
+.heroImg {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* 🔑 makes it cover the screen */
+  object-fit: cover;
   object-position: center;
   display: block;
+}
+
+.heroImgPrev {
+  z-index: 0;
+}
+
+.heroImgCurrent {
+  z-index: 1;
+  animation: heroFadeIn 300ms ease-in-out;
+}
+
+@keyframes heroFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Accessibility: if user prefers reduced motion, disable fading */
+@media (prefers-reduced-motion: reduce) {
+  .heroImgCurrent {
+    animation: none;
+  }
 }
 
 .home {
