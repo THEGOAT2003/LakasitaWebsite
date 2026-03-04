@@ -7,6 +7,7 @@ import Whine from "./Whine/Whine";
 import { Routes, Route } from "react-router-dom";
 import "./index.css"
 import PrivacyPolicy from "./PrivacyPolicy/PrivacyPolicy";
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       </main>
 
       <Footer />
+      <Analytics></Analytics>
     </div>
   );
 }
